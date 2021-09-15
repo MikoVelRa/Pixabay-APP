@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Proyecto API Buscador Imágenes</title>
+  </head>
+  <body class="background">
+    <div class="mx-auto w-2/3 mt-4 text-center" id="container">
+      <h1 class="uppercase text-white text-3xl font-bold mb-20">
+        Buscador de imágenes Pixabay
+      </h1>
+
+      <p class="text-white mb-10 text-sm">Término búsqueda</p>
+
+      <form id="form" class="h-30 flex flex-col w-1/2 mx-auto">
+        <input
+          type="text"
+          id="txtCity"
+          class="rounded-sm p-2 mb-5"
+          placeholder="Término de búsqueda. Ejemplo: Café, Futbol, Naturaleza"
+        />
+        <input
+          type="submit"
+          value="Buscar imágenes"
+          id="btnSubmit"
+          class="
+            rounded-sm
+            p-2
+            bg-yellow-400
+            uppercase
+            font-bold
+            placeholder-gray-700 placeholder-opacity-75
+            tracking-tighter
+          "
+        />
+      </form>
+    </div>
+
+    <div
+      id="resultado"
+      class="mt-8 w-3/4 mx-auto flex space-y-2 flex-wrap items-center"
+    ></div>
+
+    <div id="pager" class="text-center w-3/4 mx-auto p-4 flex gap-y-3 gap-x-2 flex-wrap justify-between"></div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
