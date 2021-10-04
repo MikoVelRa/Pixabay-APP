@@ -28,18 +28,20 @@ function validarFormulario(e) {
 
   //Hacemos llamada a API
   fetch(
-    `https://pixabay.com/api?key=23372427-06f5e9450609522e9c228fdcb&q=${inputSearchDefinition}&per_page=${RESULTS_PER_PAGE}&page=${page}`
+    `https://api.allorigins.win/get?url=${encodeURIComponent(`https://pixabay.com/api?key=23372427-06f5e9450609522e9c228fdcb&q=${inputSearchDefinition}&per_page=${RESULTS_PER_PAGE}&page=${page}`)}`
   )
     .then((response) => response.json())
-    .then((resultado) => {
+    .then((resultado) => {      
+      const result = JSON.parse(resultado.contents)
       cleanResult(results);
       cleanResult(pager);
-      if(resultado.totalHits === 0) {
+      if(result.totalHits === 0) {
         displayErrorMessage("Sin resultados");
         return;
       }
-      displayImgs(resultado);
-      generatePager(resultado.totalHits);
+      displayImgs(result);
+      generatePager(result.totalHits);
+      
     });
 }
 
